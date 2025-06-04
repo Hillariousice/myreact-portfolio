@@ -13,9 +13,102 @@ import web4 from '../public/web4.png'
 import web5 from '../public/web5.png'
 import web6 from '../public/web6.png'
 import { useState } from 'react'
+import { FaBars } from 'react-icons/fa';
 
 export default function Home() {
   const [darkMode,setDarkMode] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const projects = [
+      {
+        title: "GRACE REAL ESTATE (Full-Stack)",
+        description: "An online real estate platform for property purchases, rentals, and secure payment processing.",
+        techStack: "JavaScript, Node.js, Express, TypeScript, React, MongoDB",
+        githubLink: "https://github.com/hillariousice/gracerealestate",
+        liveDemoLink: null
+      },
+      {
+        title: "SWIFT RIDER (Collaborative Full-Stack)",
+        description: "A dispatch-rider app that lets users order rides in real time, featuring seamless ride management and tracking.",
+        techStack: "JavaScript, Node.js, Express, TypeScript, React, PostgreSQL",
+        githubLink: "https://github.com/hillariousice/swift-rider",
+        liveDemoLink: "https://swift-rider.netlify.app"
+      },
+      {
+        title: "MYREACT-PORTFOLIO (Personal Frontend)",
+        description: "My personal portfolio website showcasing projects, built with a dark-mode toggle and GitHub integration.",
+        techStack: "JavaScript, Next.js, Tailwind CSS",
+        githubLink: "https://github.com/hillariousice/myreact-portfolio",
+        liveDemoLink: null
+      },
+      {
+        title: "JOB-ON-GO (Full-Stack)",
+        description: "A job application platform where users can browse and apply for opportunities with real-time data and secure authentication.",
+        techStack: "Vue.js, Firebase, Tailwind CSS",
+        githubLink: "https://github.com/Hillariousice/job-on-go",
+        liveDemoLink: null
+      },
+      {
+        title: "AGRI-WEATHER (Mobile App)",
+        description: "A React Native app that helps farmers detect climate change patterns related to soil conditions using real-time weather data.",
+        techStack: "React Native, OpenWeather API",
+        githubLink: "https://github.com/Hillariousice/agri-weather",
+        liveDemoLink: null
+      }
+    ];
+
+  const techStackCards = [
+      {
+        title: "Frontend",
+        content: [
+          { subCat: "Markup & Styling:", items: "HTML5, CSS3, Tailwind CSS, SCSS, Styled-Components, PrelineUI, Lucide Icons" },
+          { subCat: "JavaScript Frameworks & Libraries:", items: "React (Hooks, Context API, Redux Toolkit), Next.js (SSR/SSG), Vue.js" },
+          { subCat: "State Management:", items: "Redux / Redux Toolkit, React Context API, useState, useReducer, useMemo, useCallback" }
+        ]
+      },
+      {
+        title: "Mobile Development",
+        content: [
+          { subCat: "Platform:", items: "React Native (iOS & Android)" },
+          { subCat: "Key Skills:", items: "Offline & real-time data handling (e.g., Redux + Context patterns)" }
+        ]
+      },
+      {
+        title: "Backend",
+        content: [
+          { subCat: "Node.js Ecosystem:", items: "Node.js, Express.js, NestJS" },
+          { subCat: "Architecture & APIs:", items: "RESTful APIs, WebSockets (real-time features), OOP (object-oriented patterns), Microservices architecture" },
+          { subCat: "Authentication & Security:", items: "JSON Web Tokens (JWT), Role-based access control (RBAC), Secure form validation, authentication flows" },
+          { subCat: "Email & Notifications:", items: "Nodemailer" }
+        ]
+      },
+      {
+        title: "Databases & Data Storage",
+        content: [
+          { subCat: "SQL:", items: "PostgreSQL, MySQL, SQLite" },
+          { subCat: "NoSQL:", items: "MongoDB, Firebase Firestore" },
+          { subCat: "Caching:", items: "Redis" },
+          { subCat: "Real-time:", items: "Firebase Realtime" }
+        ]
+      },
+      {
+        title: "DevOps & Cloud Services",
+        content: [
+          { subCat: "Version Control & CI/CD:", items: "Git & GitHub (Actions, Project Boards)" },
+          { subCat: "Containerization & Hosting:", items: "Docker, Heroku, AWS (EC2, Lambda, S3, autoscaling, CloudWatch), Azure, Firebase (Hosting, Auth, Functions)" },
+          { subCat: "Monitoring & APIs:", items: "Swagger (API documentation), Firebase Crashlytics / Monitoring tools" }
+        ]
+      },
+      {
+        title: "Testing, Project Management & Other",
+        content: [
+          { subCat: "Testing & Quality:", items: "Test-Driven Development (TDD), Unit & Integration Testing (Jest, React Native Testing Library, etc.), Code reviews & best-practice linting" },
+          { subCat: "Project Management & Collaboration:", items: "Agile methodologies (Scrum), Jira, ClickUp, GitHub Project Boards, Remote collaboration tools (e.g., Slack integrations, Zoom)" },
+          { subCat: "Other Notable Mentions:", items: "Experience integrating third-party APIs (e.g., OpenWeather API, payment gateways), Server-side performance optimization (lazy loading, code-splitting, caching strategies), Responsive / mobile-first design principles" }
+        ]
+      }
+    ];
+
   return (
     <div className={darkMode ? "dark":""}>
       <Head>
@@ -25,20 +118,46 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       
       </Head>
-      <main className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900">
-        <section className="min-h-screen">
-          <nav className="py-10 mb-12 flex justify-between">
+      <main id="home" className="bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900">
+        <section id="about-me" className="min-h-screen">
+          <nav className="py-10 mb-12 flex justify-between items-center dark:text-white">
             <h1 className="text-xl font-burtons">Developedbyuri</h1>
-            <ul className="flex items-center">
-              <li><BsFillMoonStarsFill  onClick={()=> setDarkMode(!darkMode)}className="cursor-pointer"/></li>
-              <li>
-                <a  className="bg-gradient-to-r from-cyan-500 to-teal-500 text-whit px-4 py-2 rounded-md ml-8" href='https://github.com/Hillariousice'>Resume</a></li>
+
+            {/* Desktop Menu Links */}
+            <ul className="hidden md:flex items-center">
+              <li><BsFillMoonStarsFill onClick={()=> setDarkMode(!darkMode)} className="cursor-pointer text-2xl"/></li>
+              <li><a className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8" href='https://drive.google.com/file/d/1QX0qbp8J55r4BSLBqTDkmqpobB8d4ax8/view?usp=drivesdk'>Resume</a></li>
             </ul>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Open Menu">
+                <FaBars className="text-2xl"/>
+              </button>
+            </div>
           </nav>
+
+          {/* Mobile Dropdown Menu */}
+          {isMenuOpen && (
+            <div className="md:hidden absolute top-20 left-0 right-0 bg-white dark:bg-gray-800 shadow-lg rounded-b-lg z-50">
+              <ul className="flex flex-col items-center py-4">
+                <li className="py-2"><a href="#home" onClick={() => setIsMenuOpen(false)} className="text-gray-800 dark:text-gray-200 hover:text-teal-500">Home</a></li>
+                <li className="py-2"><a href="#about-me" onClick={() => setIsMenuOpen(false)} className="text-gray-800 dark:text-gray-200 hover:text-teal-500">About Me</a></li>
+                <li className="py-2"><a href="#tech-stack" onClick={() => setIsMenuOpen(false)} className="text-gray-800 dark:text-gray-200 hover:text-teal-500">Tech Stack</a></li>
+                <li className="py-2"><a href="#projects" onClick={() => setIsMenuOpen(false)} className="text-gray-800 dark:text-gray-200 hover:text-teal-500">Projects</a></li>
+                <li className="py-4">
+                  <a className="bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md" href='https://drive.google.com/file/d/1QX0qbp8J55r4BSLBqTDkmqpobB8d4ax8/view?usp=drivesdk' onClick={() => setIsMenuOpen(false)}>Resume</a>
+                </li>
+                <li className="py-2">
+                  <BsFillMoonStarsFill onClick={()=> {setDarkMode(!darkMode); setIsMenuOpen(false);}} className="cursor-pointer text-2xl text-gray-800 dark:text-gray-200"/>
+                </li>
+              </ul>
+            </div>
+          )}
           <div className="text-center p-10 py-10">
-            <h2 className="text-5xl py-2 text-teal-600 font-medium md:text-6xl">Hillary Okporka</h2>
-            <h3 className="text-2xl py-2 md:text-3xl">Developer and designer.</h3>
-           <p className="text-md py-5 leading-8 text-gray-800 text-gray-800 md:text-xl max-w-lg mx-auto">
+            <h2 className="text-5xl py-2 text-teal-500 dark:text-teal-200 font-medium md:text-6xl">Hillary Okporka</h2>
+            <h3 className="text-2xl py-2 md:text-3xl">Software Developer.</h3>
+           <p className="text-md py-5 leading-8 text-gray-800 dark:text-white text-gray-800 dark:text-white md:text-xl max-w-lg mx-auto">
             Freelancer providing services for programming and design content.
              Join me down below and lets get cracking.
            </p>
@@ -54,83 +173,50 @@ export default function Home() {
         </section>
       <section>
         <div>
-          <h3 className="text-3xl py-1">Services I offer</h3>
-          <p className="text-md py-2 leading-8 text-gray-800">
-            Since the beginning of my journey as a full stack developer,I have done remote work for 
-             <span className='text-teal-500'> agencies</span> consulted for  <span className='text-teal-500'> startups</span>
-            and collaborated with talented people to create digital products for both business and consumer use.
+          <h3 className="text-3xl py-1">About Me</h3>
+          <p className="text-md py-2 leading-8 text-gray-800 dark:text-white">
+            I’m Hillary Okporka, a Full-Stack Software Engineer with 4+ years of experience building scalable web and mobile applications. I specialize in TypeScript-based stacks—React, Next.js, NestJS, and React Native—paired with databases like MongoDB and PostgreSQL. My passion is translating complex requirements into intuitive, high-performance UIs and robust backend services. I’ve worked across fintech, real estate, and logistics domains, delivering features under tight deadlines while maintaining code quality, security, and responsiveness.
           </p>
-          <p className="text-md py-2 leading-8 text-gray-800">
-            I offer from a wide range of services, including brand programming and teaching.
-          </p>
-        </div>
-        <div className="lg:flex gap-10">
-          <div className="text-center shadow-lg p-10 rounded-xl my-10">
-            <Image src={design} width={100} height={100}/>
-            <h3 className="text-lg font-medium pt-8 pb-2">Beautiful Designs </h3>
-            <p className="py-2">
-              Creating elegeant designs suited for your needs design theory.
-            </p>
-            <h4 className="py-4 text-teal-600" >Design tools I use</h4>
-            <p className="text-gray-800 py-1">Canvas</p>
-            <p className="text-gray-800 py-1">Illustrator</p>
-            <p className="text-gray-800 py-1">Figma</p>
-          </div>
-          <div className="text-center shadow-lg p-10 rounded-xl my-10">
-            <Image src={code} width={100} height={100}/>
-            <h3 className="text-lg font-medium pt-8 pb-2"> Creative Designs </h3>
-            <p className="py-2">
-              Creating elegeant designs suited for your needs design theory.
-            </p>
-            <h4 className="py-4 text-teal-600" >Design tools I use</h4>
-            <p className="text-gray-800 py-1">Canvas</p>
-            <p className="text-gray-800 py-1">Illustrator</p>
-            <p className="text-gray-800 py-1">Figma</p>
-          </div>
-          <div className="text-center shadow-lg p-10 rounded-xl my-10">
-            <Image src={consulting} width={100} height={100}/>
-            <h3 className="text-lg font-medium pt-8 pb-2"> Attractive Designs </h3>
-            <p className="py-2">
-              Creating elegeant designs suited for your needs design theory.
-            </p>
-            <h4 className="py-4 text-teal-600" >Design tools I use</h4>
-            <p className="text-gray-800 py-1">Canvas</p>
-            <p className="text-gray-800 py-1">Illustrator</p>
-            <p className="text-gray-800 py-1">Figma</p>
-          </div>
         </div>
       </section>
-      <section>
-        <div>
-          <h3 className="text-3xl py-1">Portfolio</h3>
-          <p className="text-md py-2 leading-8 text-gray-800">
-            Since the beginning of my journey as a full stack developer,I have done remote work for 
-             <span className='text-teal-500'> agencies </span> consulted for  <span className='text-teal-500'> startups </span>
-             and collaborated with talented people to create digital products for both business and consumer use.
-          </p>
-          <p className="text-md py-2 leading-8 text-gray-800">
-            I offer from a wide range of services, including brand programming and teaching.
-          </p>
+      <section id="tech-stack" className="py-10">
+        <h3 class="text-3xl py-1 text-center dark:text-white">My Tech Stack</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pt-10">
+          {techStackCards.map((card, cardIndex) => (
+            <div key={cardIndex} className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-800 flex flex-col">
+              <h3 className="text-xl font-semibold pt-4 pb-4 text-teal-500 dark:text-teal-200">{card.title}</h3>
+              <div className="text-left text-sm text-gray-800 dark:text-gray-200 space-y-2">
+                {card.content.map((item, itemIndex) => (
+                  <p key={itemIndex}>
+                    <span className="font-semibold">{item.subCat}</span> {item.items}
+                  </p>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
-        <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
-          <div className="basis-1/3 flex-1">
-            <Image src={web1} className="rounded-lg object-cover" width={'100%'} height={"100%"} layout="responsive"/>
-          </div>
-          <div className="basis-1/3 flex-1">
-            <Image src={web2} className="rounded-lg object-cover" width={'100%'} height={"100%"} layout="responsive"/>
-          </div>
-          <div className="basis-1/3 flex-1">
-            <Image src={web3} className="rounded-lg object-cover" width={'100%'} height={"100%"} layout="responsive"/>
-          </div>
-          <div className="basis-1/3 flex-1">
-            <Image src={web4} className="rounded-lg object-cover" width={'100%'} height={"100%"} layout="responsive"/>
-          </div>
-          <div className="basis-1/3 flex-1">
-            <Image src={web5} className="rounded-lg object-cover" width={'100%'} height={"100%"} layout="responsive"/>
-          </div>
-          <div className="basis-1/3 flex-1">
-            <Image src={web6} className="rounded-lg object-cover" width={'100%'} height={"100%"} layout="responsive"/>
-          </div>
+      </section>
+      <section id="projects">
+        <div>
+          <h3 className="text-3xl py-1">Projects</h3>
+          {/* Optional: Add a brief intro paragraph for projects if needed */}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 py-10">
+          {projects.map((project, index) => (
+            <div key={index} className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-800 flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-medium pt-4 pb-2 text-teal-500 dark:text-teal-200">{project.title}</h3>
+                <p className="py-2 text-sm text-gray-800 dark:text-white">{project.description}</p>
+                <p className="py-2 text-xs text-gray-600 dark:text-gray-300"><span className="font-semibold">Tech Stack:</span> {project.techStack}</p>
+              </div>
+              <div className="mt-6 flex justify-center gap-4">
+                <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="text-sm bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md hover:opacity-90">View Code</a>
+                {project.liveDemoLink && (
+                  <a href={project.liveDemoLink} target="_blank" rel="noopener noreferrer" className="text-sm bg-gray-500 text-white px-4 py-2 rounded-md hover:opacity-90 dark:bg-gray-600">Live Demo</a>
+                )}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
       </main>
