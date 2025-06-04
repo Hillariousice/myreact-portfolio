@@ -156,7 +156,7 @@ export default function Home() {
           )}
           <div className="text-center p-10 py-10">
             <h2 className="text-5xl py-2 text-teal-500 dark:text-teal-200 font-medium md:text-6xl">Hillary Okporka</h2>
-            <h3 className="text-2xl py-2 md:text-3xl">Software Developer.</h3>
+            <h3 className="text-2xl py-2 md:text-3xl text-gray-700 dark:text-white">Software Developer.</h3>
            <p className="text-md py-5 leading-8 text-gray-800 dark:text-white text-gray-800 dark:text-white md:text-xl max-w-lg mx-auto">
             Passionate developer focused on delivering clean, efficient code and elegant design. Let’s connect and create something great.
            </p>
@@ -170,16 +170,16 @@ export default function Home() {
           <Image src={deved} layout="fill" objectFit="cover" />
           </div>
         </section>
-      <section>
+      <section className="mt-3">
         <div>
-          <h3 className="text-3xl py-1">About Me</h3>
+          <h3 className="text-3xl py-1 text-gray-700 dark:text-white">About Me</h3>
           <p className="text-md py-2 leading-8 text-gray-800 dark:text-white">
             I’m Hillary Okporka, a Full-Stack Software Engineer with 4+ years of experience building scalable web and mobile applications. I specialize in TypeScript-based stacks—React, Next.js, NestJS, and React Native—paired with databases like MongoDB and PostgreSQL. My passion is translating complex requirements into intuitive, high-performance UIs and robust backend services. I’ve worked across fintech, real estate, and logistics domains, delivering features under tight deadlines while maintaining code quality, security, and responsiveness.
           </p>
         </div>
       </section>
       <section id="tech-stack" className="py-10">
-        <h3 class="text-3xl py-1 text-center dark:text-white">My Tech Stack</h3>
+        <h3 class="text-3xl py-1 text-center text-gray-700 dark:text-white">My Tech Stack</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 pt-10">
           {techStackCards.map((card, cardIndex) => (
             <div key={cardIndex} className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-800 flex flex-col">
@@ -197,7 +197,7 @@ export default function Home() {
       </section>
       <section id="projects">
         <div>
-          <h3 className="text-3xl py-1">Projects</h3>
+          <h3 className="text-3xl py-1 text-gray-700 dark:text-white">Projects</h3>
           {/* Optional: Add a brief intro paragraph for projects if needed */}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
@@ -219,7 +219,7 @@ export default function Home() {
         </div>
       </section>
       </main>
-      <footer className="text-center py-10 px-10 mt-10 bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300">
+      <footer className="text-center py-10 px-10 mt-10 bg-white dark:bg-gray-900 text-gray-700 dark:text-white">
         <div className="max-w-4xl mx-auto">
           <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
 
