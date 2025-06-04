@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import {BsFillMoonStarsFill} from 'react-icons/bs'
-import {AiFillTwitterCircle,AiFillLinkedin,AiFillYoutube}from 'react-icons/ai'
+import {AiFillTwitterCircle, AiFillLinkedin, AiFillYoutube, AiFillGithub} from 'react-icons/ai'
 import Image from "next/image"
 import deved from '../public/shehulk.png'
 import design from '../public/design.png'
@@ -25,7 +25,7 @@ export default function Home() {
         description: "An online real estate platform for property purchases, rentals, and secure payment processing.",
         techStack: "JavaScript, Node.js, Express, TypeScript, React, MongoDB",
         githubLink: "https://github.com/hillariousice/gracerealestate",
-        liveDemoLink: null
+        liveDemoLink: "https://grace-real-estate.vercel.app/"
       },
       {
         title: "SWIFT RIDER (Collaborative Full-Stack)",
@@ -35,18 +35,18 @@ export default function Home() {
         liveDemoLink: "https://swift-rider.netlify.app"
       },
       {
-        title: "MYREACT-PORTFOLIO (Personal Frontend)",
-        description: "My personal portfolio website showcasing projects, built with a dark-mode toggle and GitHub integration.",
-        techStack: "JavaScript, Next.js, Tailwind CSS",
-        githubLink: "https://github.com/hillariousice/myreact-portfolio",
-        liveDemoLink: null
+        title: "FineDine (Mobile App)",
+        description: "A React Native recipe app for discovering and managing good recipes.",
+        techStack: "JavaScript, React Native, Redux",
+        githubLink: "https://github.com/Hillariousice/finedine",
+        liveDemoLink: "https://finedine-ecru.vercel.app/"
       },
       {
         title: "JOB-ON-GO (Full-Stack)",
         description: "A job application platform where users can browse and apply for opportunities with real-time data and secure authentication.",
         techStack: "Vue.js, Firebase, Tailwind CSS",
         githubLink: "https://github.com/Hillariousice/job-on-go",
-        liveDemoLink: null
+        liveDemoLink: "https://job-on-go.vercel.app/"
       },
       {
         title: "AGRI-WEATHER (Mobile App)",
@@ -158,14 +158,13 @@ export default function Home() {
             <h2 className="text-5xl py-2 text-teal-500 dark:text-teal-200 font-medium md:text-6xl">Hillary Okporka</h2>
             <h3 className="text-2xl py-2 md:text-3xl">Software Developer.</h3>
            <p className="text-md py-5 leading-8 text-gray-800 dark:text-white text-gray-800 dark:text-white md:text-xl max-w-lg mx-auto">
-            Freelancer providing services for programming and design content.
-             Join me down below and lets get cracking.
+            Passionate developer focused on delivering clean, efficient code and elegant design. Let’s connect and create something great.
            </p>
           </div>
-          <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600">
-            <AiFillTwitterCircle/>
-            <AiFillLinkedin/>
-            <AiFillYoutube/>
+          <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
+            <a href="https://x.com/clotidestark?s=21&t=js7mq5ZSEylYHzudbdUQBA" target="_blank" rel="noopener noreferrer"><AiFillTwitterCircle/></a>
+            <a href="https://www.linkedin.com/in/hillary-okporka-348a23182" target="_blank" rel="noopener noreferrer"><AiFillLinkedin/></a>
+            <a href="https://github.com/Hillariousice" target="_blank" rel="noopener noreferrer"><AiFillGithub/></a>
           </div>
           <div className="relative mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 mt-20 overflow-hidden md:h-96 md:w-96">
           <Image src={deved} layout="fill" objectFit="cover" />
@@ -201,9 +200,9 @@ export default function Home() {
           <h3 className="text-3xl py-1">Projects</h3>
           {/* Optional: Add a brief intro paragraph for projects if needed */}
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
           {projects.map((project, index) => (
-            <div key={index} className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-gray-800 flex flex-col justify-between">
+            <div key={index} className="text-center shadow-lg p-10 rounded-xl my-6 dark:bg-gray-800 flex flex-col justify-between">
               <div>
                 <h3 className="text-xl font-medium pt-4 pb-2 text-teal-500 dark:text-teal-200">{project.title}</h3>
                 <p className="py-2 text-sm text-gray-800 dark:text-white">{project.description}</p>
@@ -220,6 +219,26 @@ export default function Home() {
         </div>
       </section>
       </main>
+      <footer className="text-center py-10 px-10 mt-10 bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-2xl font-semibold mb-6">Get in Touch</h3>
+
+          <div className="mb-6 space-y-2">
+            <p>Email: <a href="mailto:hillariousice@gmail.com" className="hover:text-teal-500 dark:hover:text-teal-300">hillariousice@gmail.com</a></p>
+            <p>Phone: <a href="tel:09021392965" className="hover:text-teal-500 dark:hover:text-teal-300">09021392965</a> | <a href="tel:08108677553" className="hover:text-teal-500 dark:hover:text-teal-300">08108677553</a></p>
+          </div>
+
+          <div className="text-4xl flex justify-center gap-12 py-4 text-gray-600 dark:text-gray-400 mb-6">
+            <a href="https://x.com/clotidestark?s=21&t=js7mq5ZSEylYHzudbdUQBA" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-teal-500 dark:hover:text-teal-300"><AiFillTwitterCircle/></a>
+            <a href="https://www.linkedin.com/in/hillary-okporka-348a23182" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-teal-500 dark:hover:text-teal-300"><AiFillLinkedin/></a>
+            <a href="https://github.com/Hillariousice" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-teal-500 dark:hover:text-teal-300"><AiFillGithub/></a>
+          </div>
+
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            &copy; {new Date().getFullYear()} Hillary Okporka. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   )
 }
