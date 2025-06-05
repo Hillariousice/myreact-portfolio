@@ -53,7 +53,7 @@ export default function Home() {
         description: "A React Native app that helps farmers detect climate change patterns related to soil conditions using real-time weather data.",
         techStack: "React Native, OpenWeather API",
         githubLink: "https://github.com/Hillariousice/agri-weather",
-        liveDemoLink: null
+        liveDemoLink: "https://agri-weather.vercel.app/"
       }
     ];
 
