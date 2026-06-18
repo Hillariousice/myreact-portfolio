@@ -121,7 +121,7 @@ export default function Home() {
       <main id="home" className="flex-grow bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900">
         <section id="about-me" className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between items-center dark:text-white">
-            <h1 className="text-xl font-burtons">Developedbyuri</h1>
+            {/* <h1 className="text-xl font-burtons">Developedbyuri</h1> */}
 
             {/* Desktop Menu Links */}
             <ul className="hidden md:flex items-center">
@@ -156,9 +156,9 @@ export default function Home() {
           )}
           <div className="text-center p-10 py-10">
             <h2 className="text-5xl py-2 text-teal-500 dark:text-teal-200 font-medium md:text-6xl">Hillary Okporka</h2>
-            <h3 className="text-2xl py-2 md:text-3xl text-gray-700 dark:text-white">Software Developer.</h3>
+            <h3 className="text-2xl py-2 md:text-3xl text-gray-700 dark:text-white">React Native & Frontend Engineer</h3>
            <p className="text-md py-5 leading-8 text-gray-800 dark:text-white text-gray-800 dark:text-white md:text-xl max-w-lg mx-auto">
-            Passionate developer focused on delivering clean, efficient code and elegant design. Let’s connect and create something great.
+           Building cross-platform mobile and web applications with clean code and thoughtful design. Open to remote opportunities — let's build something great.
            </p>
           </div>
           <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
@@ -174,7 +174,7 @@ export default function Home() {
         <div>
           <h3 className="text-3xl py-1 text-gray-700 dark:text-white">About Me</h3>
           <p className="text-md py-2 leading-8 text-gray-800 dark:text-white">
-            I’m Hillary Okporka, a Full-Stack Software Engineer with 4+ years of experience building scalable web and mobile applications. I specialize in TypeScript-based stacks—React, Next.js, NestJS, and React Native—paired with databases like MongoDB and PostgreSQL. My passion is translating complex requirements into intuitive, high-performance UIs and robust backend services. I’ve worked across fintech, real estate, and logistics domains, delivering features under tight deadlines while maintaining code quality, security, and responsiveness.
+            I'm Hillary Okporka, a React Native & Frontend Engineer with 3+ years of experience building cross-platform mobile and web applications. I specialize in TypeScript-based stacks—React Native, React, Next.js, and NestJS—paired with databases like MongoDB and PostgreSQL. My passion is translating complex requirements into intuitive, high-performance mobile and web experiences. I've worked across fintech, real estate, logistics, and agri-tech domains, delivering features under tight deadlines while maintaining code quality, security, and responsiveness. I'm currently expanding into native iOS development through the Meta iOS Development Professional Certificate program.
           </p>
         </div>
       </section>
@@ -225,7 +225,11 @@ export default function Home() {
 
           <div className="mb-6 space-y-2">
             <p>Email: <a href="mailto:hillariousice@gmail.com" className="hover:text-teal-500 dark:hover:text-teal-300">hillariousice@gmail.com</a></p>
-            <p>Phone: <a href="tel:09021392965" className="hover:text-teal-500 dark:hover:text-teal-300">09021392965</a> | <a href="tel:08108677553" className="hover:text-teal-500 dark:hover:text-teal-300">08108677553</a></p>
+            <p>Phone: <a href="tel:09021392965" className="hover:text-teal-500 dark:hover:text-teal-300">09021392965</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/hillary-okporka-348a23182" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-teal-500 dark:hover:text-teal-300">LinkedIn</a></p>
+            <p>Twitter: <a href="https://x.com/clotidestark?s=21&t=js7mq5ZSEylYHzudbdUQBA" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-teal-500 dark:hover:text-teal-300">Twitter</a></p>
+            <p>GitHub: <a href="https://github.com/Hillariousice" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-teal-500 dark:hover:text-teal-300">GitHub</a></p>
+            <p className="text-xl font-medium mb-6">Open to remote React Native & Frontend roles.</p>
           </div>
 
           <div className="text-4xl flex justify-center gap-12 py-4 text-gray-600 dark:text-gray-400 mb-6">
