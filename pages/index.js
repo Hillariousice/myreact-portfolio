@@ -12,6 +12,13 @@ export default function Home() {
 
   const projects = [
       {
+        title: "QUICKSAVE (Fintech App)",
+        description: "A fintech application for managing personal savings, featuring a React Native mobile client and a secure Node.js backend.",
+        techStack: "TypeScript, React Native, Node.js, Express",
+        githubLink: "https://github.com/Hillariousice/quicksave",
+        liveDemoLink: "https://quicksave-red.vercel.app/"
+      },
+      {
         title: "GRACE REAL ESTATE (Full-Stack)",
         description: "An online real estate platform for property purchases, rentals, and secure payment processing.",
         techStack: "JavaScript, Node.js, Express, TypeScript, React, MongoDB",
